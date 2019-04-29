@@ -6,9 +6,9 @@ class Filmography extends React.Component {
 constructor(props) {
     super(props);
     this.state = {
-        film: '',
-        link: '',
-        comment: '',
+      name: '',
+      poster: '',
+      comment: '',
     }
         this.onChange = this.onChange.bind(this);
         this.submitForm = this.submitForm.bind(this);
@@ -53,33 +53,34 @@ render () {
     <fieldset>
         <legend>Informations</legend>
         <div className="film-data">
-            <label htmlFor="film">Movie title :</label>  
+            <label htmlFor="name">Movie title :</label>  
             <input
             type="text"
-            id="film"
-            name="film"
+            id="name"
+            name="name"
             onChange={this.onChange}
             value={this.state.name}
             /> 
         </div>
 
         <div className="film-data">
-            <label htmlFor="link">Add here the movie link :</label>
+            <label htmlFor="poster">Add here the movie link :</label>
             <input
             type="text"
-            id="link"
-            name="link"
+            id="poster"
+            name="poster"
             onChange={this.onChange}
-            value={this.state.firstname}
+            value={this.state.poster}
             />
         </div>
 
      <div className="film-data">
-        <label htmlFor="comment">Add a comment :</label>
-        <textarea id="comment" name="comment"
-          rows="5" cols="80">
-        It was a dark and stormy night...
-        </textarea>
+        <label htmlFor="textarea">Add a comment :</label>
+        <input id="comment" name="comment"
+          rows="5" cols="80" placeholder="It was a dark and stormy night..."
+          onChange={this.onChange}
+          value={this.state.comment}
+        />
      </div>
 
      <div className="film-data button">
